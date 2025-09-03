@@ -20,6 +20,8 @@ jobs:
         python-version: '3.x'
     - name: Install dependencies
       run: pip install -r requirements.txt
+    - name: Create test_results.log (ensure it exists)
+      run: touch test_results.log
     - name: Run tests and capture output
       run: pytest > test_results.log 2>&1
     - name: Upload test results
